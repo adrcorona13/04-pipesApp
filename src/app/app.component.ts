@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  nombre: string = 'Adrian Pineda';
+  nombre: string = 'adRian piNeda';
   valor: number = 1000;
   obj = {
     nombre: this.nombre
