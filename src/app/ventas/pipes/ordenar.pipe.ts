@@ -5,10 +5,16 @@ import { Heroe } from '../interfaces/ventas.interfaces';
     name:'ordenar'
 })
 export class OrdenarPipe implements PipeTransform{
-    transform(items : Heroe[], direccion: string = 'asc') : Heroe[] {
-        if (direccion == 'asc') {
-            return items.sort((a,b) => a.nombre > b.nombre ? 1: -1 );
+    transform(items : Heroe[], ordenarPor:string = '', direccion: string = 'asc') : Heroe[] {
+        switch (ordenarPor) {
+            case 'nombre':
+                return items.sort((a,b) => a.nombre > b.nombre ? 1: -1 );
+            case 'vuela':
+                return items.sort((a,b) => a.vuela < b.vuela ? 1: -1 );
+            case 'color':
+                return items.sort((a,b) => a.color > b.color ? 1: -1 );
+            default:
+                return items;
         }
-        return items.sort((a,b) => a.nombre < b.nombre ? 1: -1 );
     }
 }

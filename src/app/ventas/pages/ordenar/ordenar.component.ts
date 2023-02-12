@@ -9,6 +9,8 @@ import { Color, Heroe } from '../../interfaces/ventas.interfaces';
 export class OrdenarComponent {
 
   toggle: boolean = false;
+
+  ordenarPor: string = '';
   heroes: Heroe[] = [
     {
       nombre: 'Superman',
@@ -39,5 +41,9 @@ export class OrdenarComponent {
 
   toggleCase() {
     this.toggle = !this.toggle;    
+  }
+
+  cambiarOrden( valor : string){
+    this.ordenarPor = valor;
   }
 }
